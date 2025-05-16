@@ -152,8 +152,8 @@ class PacketQuiz:
                 'packet_index': 1,
                 'options': ["True", "False"],
                 'answer': "False",
-                'explanation': "The TTL value in this packet is 64 (0x40), which is a common default value for many operating systems.",
-                'hex_location': "0016 40"
+                'explanation': "The TTL value in this packet is 4 (0x04), which is typically invalid.",
+                'hex_location': "0016 04"
             },
             {
                 'id': 10,
@@ -384,10 +384,10 @@ class PacketQuiz:
                 'id': 35,
                 'text': "What is the ICMP sequence number in the Echo Request packet?",
                 'packet_index': 1,
-                'options': ["1", "2", "4", "8"],
-                'answer': "1",
-                'explanation': "The ICMP sequence number is 0x0001, which is used to match Echo Requests with their corresponding Echo Replies.",
-                'hex_location': "0028 0001"
+                'options': ["4096", "2048", "1024", "8192"],
+                'answer': "4096",
+                'explanation': "The ICMP sequence number is 0x1000, which is used to match Echo Requests with their corresponding Echo Replies.",
+                'hex_location': "0028 1000"
             },
             {
                 'id': 36,
@@ -450,7 +450,7 @@ class PacketQuiz:
                 'options': ["0x012c3d4e", "0x00000000", "0x01030308", "0x02040405"],
                 'answer': "0x012c3d4e",
                 'explanation': "The timestamp value is 0x012c3d4e, which is used for round-trip time measurement and protection against wrapped sequence numbers.",
-                'hex_location': "0042 012c3d4e"
+                'hex_location': "0045 012c3d4e"
             },
             {
                 'id': 43,
@@ -474,10 +474,10 @@ class PacketQuiz:
                 'id': 45,
                 'text': "What is the echo timestamp reply value in the TCP packet with options?",
                 'packet_index': 3,
-                'options': ["0x00000000", "0x012c3d4e", "0x01030308", "0x02040405"],
-                'answer': "0x00000000",
-                'explanation': "The echo timestamp reply value is 0x00000000, indicating this is the first packet in the connection with no previous timestamp to echo.",
-                'hex_location': "0046 00000000"
+                'options': ["0x4e000000", "0x012c3d4e", "0x01030308", "0x02040405"],
+                'answer': "0x4e000000",
+                'explanation': "The echo timestamp reply value is 0x4e000000, indicating this is the first packet in the connection with no previous timestamp to echo.",
+                'hex_location': "0048 4e000000"
             },
             {
                 'id': 46,
