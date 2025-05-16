@@ -251,8 +251,8 @@ class PacketQuiz:
                 'packet_index': 3,
                 'options': ["True", "False"],
                 'answer': "False",
-                'explanation': "The TCP flags field shows only the SYN flag is set (0x02), not the ACK flag.",
-                'hex_location': "002f 02"
+                'explanation': "The TCP flags field shows only the CWR (Congestion Window Reduced) flag is set (0x80), not the ACK flag.",
+                'hex_location': "002f 80"
             },
             {
                 'id': 21,
@@ -492,10 +492,10 @@ class PacketQuiz:
                 'id': 47,
                 'text': "What is the DNS transaction ID in the UDP/DNS query packet?",
                 'packet_index': 4,
-                'options': ["0x1234", "0xaabb", "0x0001", "0x0100"],
-                'answer': "0xaabb",
-                'explanation': "The DNS transaction ID is 0xaabb, which is used to match queries with their corresponding responses.",
-                'hex_location': "002a aabb"
+                'options': ["0x1234", "0xa123", "0xbb23", "0xb123"],
+                'answer': "0xb123",
+                'explanation': "The DNS transaction ID is 0xb123, which is used to match queries with their corresponding responses.",
+                'hex_location': "002a b123"
             },
             {
                 'id': 48,
