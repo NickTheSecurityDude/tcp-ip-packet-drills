@@ -213,7 +213,7 @@ class PacketQuiz:
                 'id': 16,
                 'text': "What is the window size in the TCP packet with no options?",
                 'packet_index': 2,
-                'options': ["8192", "5840", "8192", "32768"],
+                'options': ["4096", "5840", "8192", "32768"],
                 'answer': "8192",
                 'explanation': "The window size field contains 0x2000, which is 8192 in decimal, indicating the receive buffer size.",
                 'hex_location': "0030 2000"
@@ -240,10 +240,10 @@ class PacketQuiz:
                 'id': 19,
                 'text': "What is the Maximum Segment Size (MSS) value in the TCP packet with options?",
                 'packet_index': 3,
-                'options': ["536", "1460", "1500", "9000"],
-                'answer': "1460",
-                'explanation': "The MSS option value is 0x05b4, which is 1460 in decimal, a common MSS for Ethernet networks.",
-                'hex_location': "0038 05b4"
+                'options': ["1024", "1460", "1500", "9000"],
+                'answer': "1024",
+                'explanation': "The MSS option value is 0x0400, which is 1024 in decimal.",
+                'hex_location': "0038 0400"
             },
             {
                 'id': 20,
@@ -285,10 +285,10 @@ class PacketQuiz:
                 'id': 24,
                 'text': "What type of DNS record is being requested in the DNS query?",
                 'packet_index': 4,
-                'options': ["A", "AAAA", "MX", "CNAME"],
-                'answer': "A",
-                'explanation': "The query type is 0x0001, which corresponds to an A record (IPv4 address) request.",
-                'hex_location': "0043 0001"
+                'options': ["A", "AAAA", "MX", "TXT"],
+                'answer': "TXT",
+                'explanation': "The query type is 0x0010, which corresponds to a TXT record request.",
+                'hex_location': "0043 0010"
             },
             {
                 'id': 25,
@@ -438,10 +438,10 @@ class PacketQuiz:
                 'id': 41,
                 'text': "In the TCP packet with options, what is the window scale value?",
                 'packet_index': 3,
-                'options': ["1", "3", "7", "10"],
-                'answer': "3",
-                'explanation': "The window scale option has a value of 3, which means the actual window size is shifted left by 3 bits (multiplied by 8).\n01 NOP, 03 Window Scale (kind), 03 Length, 08 Value",
-                'hex_location': "003c 01030308"
+                'options': ["1", "3", "7", "8"],
+                'answer': "8",
+                'explanation': "The window scale has a value of 8, which means the actual window size is shifted left by 3 bits (multiplied by 8).\n01 NOP, 03 Window kind, 03 Length, 08 Value",
+                'hex_location': "003b 01030308"
             },
             {
                 'id': 42,
@@ -459,7 +459,7 @@ class PacketQuiz:
                 'options': ["True", "False"],
                 'answer': "True",
                 'explanation': "The TCP packet with options has a data offset of 8 (32 bytes), while the packet without options has a data offset of 5 (20 bytes).",
-                'hex_location': "002e 80"
+                'hex_location': "002f 80"
             },
             {
                 'id': 44,
@@ -492,10 +492,10 @@ class PacketQuiz:
                 'id': 47,
                 'text': "What is the DNS transaction ID in the UDP/DNS query packet?",
                 'packet_index': 4,
-                'options': ["0x1234", "0xa123", "0xbb23", "0xb123"],
-                'answer': "0xb123",
-                'explanation': "The DNS transaction ID is 0xb123, which is used to match queries with their corresponding responses.",
-                'hex_location': "002a b123"
+                'options': ["0x0123", "0xa123", "0xbb23", "0xb123"],
+                'answer': "0x0123",
+                'explanation': "The DNS transaction ID is 0x0123, which is used to match queries with their corresponding responses.",
+                'hex_location': "002a 0123"
             },
             {
                 'id': 48,
