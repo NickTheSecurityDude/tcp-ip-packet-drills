@@ -246,16 +246,16 @@ class TCPFlagsQuiz:
             {
                 'id': 26,
                 'text': "What does tcpdump 'tcp[13] & 0x04 = 0x04' match?",
-                'options': ["SYN-only packets", "RST-only packets", "ACK-only packets", "FIN-only packets"],
-                'answer': "RST-only packets",
-                'explanation': "This checks for RST (0x04) without other flags"
+                'options': ["SYN-only flag", "RST-only flag", "SYN plus any other flags", "RST plus any other flags"],
+                'answer': "RST plus any other flags",
+                'explanation': "This checks for RST (0x04), any other flags may also be set"
             },
             {
                 'id': 27,
-                'text': "Which filter matches packets with the PSH flag but not the ACK flag?",
+                'text': "Which filter matches packets with the PSH flag set the ACK flag unset and other flags may be set?",
                 'options': ["tcp[13] = 0x08", "tcp[13] = 0x18", "tcp[13] & 0x18 = 0x08", "tcp[13] & 0x08 = 0x08"],
-                'answer': "tcp[13] = 0x08",
-                'explanation': "0x08 is the PSH flag without any other flags"
+                'answer': "tcp[13] & 0x18 = 0x08",
+                'explanation': "0x08 is the PSH flag, other flags, execpt ACK may be set"
             },
             {
                 'id': 28,
@@ -302,9 +302,9 @@ class TCPFlagsQuiz:
             {
                 'id': 34,
                 'text': "Which flag combination is represented by tcp[13] = 0x1A?",
-                'options': ["SYN+ACK+RST", "PSH+ACK+RST", "FIN+ACK+RST", "URG+ACK+RST"],
-                'answer': "PSH+ACK+RST",
-                'explanation': "0x1A combines PSH (0x08), ACK (0x10), and RST (0x02) flags"
+                'options': ["SYN+ACK+RST", "PSH+ACK+SYN", "FIN+ACK+RST", "URG+ACK+RST"],
+                'answer': "PSH+ACK+SYN",
+                'explanation': "0x1A combines PSH (0x08), ACK (0x10), and SYN (0x02) flags"
             },
             {
                 'id': 35,
@@ -331,8 +331,8 @@ class TCPFlagsQuiz:
                 'id': 38,
                 'text': "What does tcpdump 'tcp[13] & 0x29 = 0x29' match?",
                 'options': ["FIN+PSH+URG", "FIN+ACK+URG", "SYN+ACK+URG", "RST+ACK+URG"],
-                'answer': "FIN+ACK+URG",
-                'explanation': "0x29 combines FIN (0x01), ACK (0x10), and URG (0x20) flags"
+                'answer': "FIN+PSH+URG",
+                'explanation': "0x29 combines FIN (0x01), PSH (0x08), and URG (0x20) flags"
             },
             {
                 'id': 39,
