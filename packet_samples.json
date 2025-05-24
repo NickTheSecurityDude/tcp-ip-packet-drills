@@ -101,15 +101,15 @@
   "0030-0031": "TCP Window Size",
   "0032-0033": "TCP Checksum",
   "0034-0035": "TCP Urgent Pointer",
-  "0036-0039": "TCP Option: MSS (Maximum Segment Size = 1024)",
+  "0036-0039": "TCP Option: MSS (Maximum Segment Size = 1024 bytes)",
   "003a": "TCP Option: NOP (Padding)",
   "003b-003d": "TCP Option: Window Scale (Shift count = 8)",
   "003e": "TCP Option: NOP (Padding)",
   "003f-0040": "TCP Option: SACK Permitted",
   "0041": "TCP Option: NOP (Padding)",
-  "0042-0050": "HTTP Payload (starts with 'GET / HTTP/1.1\\r\\n')"
+  "0042-0050": "HTTP Payload (ASCII: 'GET / HTTP/1.1\\r\\n')"
 },
-      "hex_dump": "001a2b3c4d5e001c2d3e4f600800450000505c010240004006b648c0a801025db8d822b25e0050000000010000008080022000f0c0000002040000010303080104020100474554202f20485454502f312e310d0a"
+      "hex_dump": "001a2b3c4d5e001c2d3e4f600800450000505c010240004006b648c0a801025db8d822b25e0050000000010000008080022000f0c0000204040001010303080104020100474554202f20485454502f312e310d0a"
     },
     {
       "name": "UDP/DNS Query",

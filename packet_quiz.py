@@ -348,10 +348,10 @@ class PacketQuiz:
                 'id': 31,
                 'text': "In the ICMP Echo Request packet, what is the identification field value in the IP header?",
                 'packet_index': 1,
-                'options': ["0x0102", "0x0000", "0x4001", "0xf77c"],
-                'answer': "0x0102",
-                'explanation': "The identification field in the IP header is 0x0102, used to identify fragments of the original datagram.",
-                'hex_location': "0012 0102"
+                'options': ["0x003c", "0x3cc0", "0xc010", "0x1040"],
+                'answer': "0xc010",
+                'explanation': "The identification field in the IP header is 0xC010, used to identify fragments of the original datagram.",
+                'hex_location': "0012 c010"
             },
             {
                 'id': 32,
@@ -445,12 +445,12 @@ class PacketQuiz:
             },
             {
                 'id': 42,
-                'text': "What is the timestamp value in the TCP packet with options?",
+                'text': "What is the length of the TCP Maximum Segment Size (MSS) option in the following packet?",
                 'packet_index': 3,
-                'options': ["0x012c3d4e", "0x00000000", "0x01030308", "0x02040405"],
-                'answer': "0x012c3d4e",
-                'explanation': "The timestamp value is 0x012c3d4e, which is used for round-trip time measurement and protection against wrapped sequence numbers.",
-                'hex_location': "0045 012c3d4e"
+                'options': ["2", "4", "8", "16"],
+                'answer': "4",
+                'explanation': "TCP Options start at 0036: 0204  Option Kind = 2 (MSS) and Length = 4",
+                'hex_location': "0037 04"
             },
             {
                 'id': 43,
@@ -465,19 +465,19 @@ class PacketQuiz:
                 'id': 44,
                 'text': "What is the total length of the IP packet in the TCP packet with options?",
                 'packet_index': 3,
-                'options': ["60", "72", "84", "92"],
-                'answer': "92",
-                'explanation': "The total length field in the IP header is 0x005c, which is 92 bytes in decimal.",
-                'hex_location': "0010 005c"
+                'options': ["50", "72", "80", "92"],
+                'answer': "80",
+                'explanation': "The total length field in the IP header is 0x0050, which is 80 bytes in decimal.",
+                'hex_location': "0010 0050"
             },
             {
                 'id': 45,
-                'text': "What is the echo timestamp reply value in the TCP packet with options?",
+                'text': "What is the MSS value in the TCP Options for this packet?",
                 'packet_index': 3,
-                'options': ["0x4e000000", "0x012c3d4e", "0x01030308", "0x02040405"],
-                'answer': "0x4e000000",
-                'explanation': "The echo timestamp reply value is 0x4e000000, indicating this is the first packet in the connection with no previous timestamp to echo.",
-                'hex_location': "0048 4e000000"
+                'options': ["256", "512", "1024", "2048"],
+                'answer': "1024",
+                'explanation': "TCP Options start at 0036: 0204  Option Kind = 2 (MSS) and Length = 4. 0038: 0400 MSS Value = 256*4=1024.",
+                'hex_location': "0038 0400"
             },
             {
                 'id': 46,
